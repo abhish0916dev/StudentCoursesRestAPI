@@ -1,13 +1,13 @@
 pipeline {
     agent { label 'AGENT' }
     triggers { 
-        pollSCM('* 23 * * 1-5')
+        pollSCM('* * * * *')
     }
     stages {
         stage('vcs') {
             steps {
                 git url: 'https://github.com/abhish0916dev/StudentCoursesRestAPI.git',
-                    branch: 'release'
+                    branch: 'develop'
             }
         }
         stage('build') {
